@@ -43,8 +43,8 @@ async def start_comm(client, message: Message, _):
         if name[0:4] == "help":
             keyboard = help_pannel(_)
             await message.reply_sticker("CAACAgQAAxkBAAEK025lZDVB-J19eJGYoWJM93ffMCHVfgACdQ8AAmeTIVPF330VUzuL4zME")
-            return await message.reply_photo(
-                       photo=config.START_IMG_URL,
+            return await message.reply_video(
+                       video="https://graph.org/file/3ffa6387ed5cee13518da.mp4",
                        caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard
             )
         if name[0:4] == "song":
@@ -204,8 +204,8 @@ async def start_comm(client, message: Message, _):
         served_users = len(await get_served_users())
         try:
             await message.reply_sticker("CAACAgQAAxkBAAEK025lZDVB-J19eJGYoWJM93ffMCHVfgACdQ8AAmeTIVPF330VUzuL4zME")
-            await message.reply_photo(
-                photo=image,
+            await message.reply_video(
+                video="https://graph.org/file/3ffa6387ed5cee13518da.mp4",
                 caption=_["start_2"].format(
                     message.from_user.first_name, config.MUSIC_BOT_NAME, served_users, served_chats
                 ),
@@ -235,8 +235,8 @@ async def start_comm(client, message: Message, _):
 async def testbot(client, message: Message, _):
     OWNER = OWNER_ID[0]
     out = start_pannel(_, app.username)
-    return await message.reply_photo(
-               photo=config.START_IMG_URL,
+    return await message.reply_video(
+               video="https://graph.org/file/3ffa6387ed5cee13518da.mp4",
                caption=_["start_1"].format(
             message.chat.title, config.MUSIC_BOT_NAME
         ),
@@ -277,8 +277,8 @@ async def welcome(client, message: Message):
                 userbot = await get_assistant(message.chat.id)
                 OWNER = OWNER_ID[0]
                 out = start_pannel(_, app.username, OWNER)
-                await message.reply_photo(
-                    photo=config.START_IMG_URL,
+                await message.reply_video(
+                    video="https://graph.org/file/3ffa6387ed5cee13518da.mp4",
                     caption=_["start_3"].format(
                         config.MUSIC_BOT_NAME,
                         userbot.username,
